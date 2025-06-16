@@ -1,0 +1,101 @@
+==============================Big-O explanation (3-14)==============================
+3. Make sure to separate the interface and implementation
+
+The big O run time is O(1) and space time is O(1). This is because no matter how 
+big the input is, the algorithm will take the same amount of time to run. 
+In this case, the files .hpp and .cpp does not affect the speed on how fast 
+the files will finish.
+
+
+4.Constructor from 2D Array
+-------------------------------------------------
+Matrix33(double input[3][3])
+-------------------------------------------------
+The big O run time is O(1) and space time is O(1). This is because since 
+9 numbers are being copied into a new matrix and the amount that is being 
+done meaning that it is a constant. Since the size of the matrix doesn’t 
+grow based on input both time and space stay constant.
+
+
+5.Copy Constructor
+-------------------------------------------------
+Matrix33(const Matrix33& other)
+-------------------------------------------------
+The big O run time is O(1) and space time is O(1). This is because it 
+copies one matrix into another and the input does not grow remains the 
+same. And for space O(1) the input does not grow.
+
+
+6.Move Constructor
+-------------------------------------------------
+Matrix33(Matrix33&& other);
+-------------------------------------------------
+The big O run time is O(1) and space time is O(1). This is because 
+it just steals the pointer to the matrix nothing is growing, it remains
+the same.
+
+
+7.Copy Assignment 
+-------------------------------------------------
+Matrix33& operator=(const Matrix33& other);
+-------------------------------------------------
+The big O run time is O(1) and space time is O(1). This is because it 
+always copies 9 fixed values from one matrix to another and deletes the 
+old matrix. The size is always the same, so it doesn’t grow with input. 
+For space, it just replaces t he old 3x3 matrix with a new one, which is a constant size.
+
+
+8. Move Assignment
+--------------------------------------------------
+Matrix33& operator=(Matrix33&& other)
+--------------------------------------------------
+The big O run time is O(1) and space time is O(1). This is because it 
+only deletes the old matrix and then takes ownership of the other matrix’s
+ memory (moves the pointer). It doesn’t copy the values. No extra space is used.
+
+
+ 9. Matrix Multiplication
+--------------------------------------------------
+Matrix33 Matrix33::operator*(const Matrix33& other)
+--------------------------------------------------
+The big O run time is O(1) and space time is O(1). Although there are loops, 
+they always run a fixed number of times (3x3x3 = 27 operations). So the time 
+is constant.The result is also a fixed 3x3 matrix, so the space used is also constant.
+
+
+10. Scalar Multiplication
+--------------------------------------------------
+Matrix33 Matrix33::operator*(double scalar)
+--------------------------------------------------
+The big O run time is O(1) and space time is O(1). This is because it 
+multiplies each of the 9 matrix elements by the scalar. The size is always 
+the same, so it takes the same amount of time and memory every time.
+
+
+11. Matrix Addition
+--------------------------------------------------
+Matrix33 Matrix33::operator+(const Matrix33& other)
+--------------------------------------------------
+The big O run time is O(1) and space time is O(1). It adds the 9 values of 
+one matrix with the 9 values of another. Since the size is always 3x3, 
+the amount of work and memory used is always the same.
+
+
+12. Output Operator
+--------------------------------------------------
+ostream& operator<<(ostream& out, const Matrix33& mat)
+--------------------------------------------------
+The big O run time is O(1) and space time is O(1). This prints out all 9 
+elements of the matrix. The number of elements never changes, so the 
+time and memory used stays constant.
+
+
+13. Input Operator
+--------------------------------------------------
+istream& operator>>(istream& in, Matrix33& mat)
+--------------------------------------------------
+The big O run time is O(1) and space time is O(1). This function takes 9 
+inputs from the user and stores them in the matrix. The amount of input 
+and memory used never changes, so both time and space are constant.
+
+
